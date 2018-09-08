@@ -21,8 +21,7 @@
   },
   "homepage": "https://github.com/dickyw71/sensor-calibration#readme",
   "dependencies": {
-    "connect": "^3.6.6",
-    "oracledb": "^2.3.0",
-    "serve-static": "^1.13.2"
+    "express": "^4.16.3",
+    "oracledb": "^2.3.0"
   }
 }
