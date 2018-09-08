@@ -25,8 +25,6 @@ async function getSensorTypes() {
     return new Promise(async function(resolve, reject) {
         try {
             let types = await sensorTypes.getSensorTypes()
-            console.log(JSON.stringify(types))
-            
             resolve(JSON.stringify(types))
         }
         catch(error) {
