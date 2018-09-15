@@ -64,9 +64,10 @@ app.get("/api/sensor-types", function (request, response) {
         })
 });
 
-app.get("/api/sensor-types", function (request, response) { 
-    // get the sensor type from the query string
-    const sensorType = 'TZ' //  default to TZ for now
+app.get("/api/sensors", function (request, response) { 
+    // get the sensor type value from the query string
+    const sensorType = request.query.type
+
     getSensorsOfType(sensorType)
         .then((results, error) => {
             if(error) {
@@ -78,6 +79,7 @@ app.get("/api/sensor-types", function (request, response) {
             }
         })
 });
+
 
 // listen for requests :)
 let listener = app.listen(process.env.PORT || 3000, function () {
