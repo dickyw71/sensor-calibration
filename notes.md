@@ -11,5 +11,5 @@
     - In-use (sensor.obsolete_flag)
     - Auxiliary Addresses  
 
-- I can select a Sensor Type from a list and the application displays a list of al sensors of the selected type
+- I can select a Sensor Type from a list and the application displays a list of all sensors of the selected type
     - Display of list of all Sensor Types
