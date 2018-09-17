@@ -50,7 +50,8 @@ async function startQuery () {
             FROM sensor s
             JOIN sensor_part_definition spd
                 ON(s.sensor_part_id = spd.sensor_part_id)
-            WHERE spd.sensor_type_cd =  :sensorType`
+            WHERE spd.sensor_type_cd = :sensorType
+                AND s.nh_sensor_id IS null`
             , ['TZ']
             , { maxRows : 0
                 , fetchInfo : {
@@ -60,6 +61,10 @@ async function startQuery () {
                 , outFormat : oracledb.OBJECT
             })
 
+        sensors.rows.forEach(element => {
+            console.log(element)
+        });
+
         parentSensorIds = sensors.rows.map( sensor => {
             if(sensor.NH_SENSOR_ID !== null) {
                 console.log(sensor.NH_SENSOR_ID)
@@ -67,7 +72,30 @@ async function startQuery () {
             }
         });
 
-        let parentSensor = await byId.getSensorById(parentSensorIds[0])
+        let parentSensor = await exeSql.executeSql(
+                `SELECT s.bar_code as Barcode
+                , s.oem_serial_no
+                , s.project_cd as Project
+                , s.cal_due_date
+                , s.revision_dt
+                , s.nh_sensor_id
+                , spd.sensor_part_name
+                , spd.sensor_type_cd
+                , s.obsolete_flag as In_use
+                , spd.equip_desc
+            FROM sensor s
+            JOIN sensor_part_definition spd
+                ON(s.sensor_part_id = spd.sensor_part_id)
+            WHERE sensor_id =  :sensorId`
+            , [parentSensorIds[0]]
+            , { maxRows : 1
+                , fetchInfo : {
+                    "CAL_DUE_DATE": { type: oracledb.STRING }
+                    , "REVISION_DT": { type: oracledb.STRING }
+                }
+                , outFormat : oracledb.OBJECT
+            })
+
         console.log(parentSensor)
 
         let sensorTypes = await exeSql.executeSql(
