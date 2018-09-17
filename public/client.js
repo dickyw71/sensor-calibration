@@ -20,6 +20,17 @@ document.addEventListener('DOMContentLoaded',function() {
 
 function sensorTypeChangeEventHandler(event) {
 
+    // get the selected sensor type option
+    let e = document.getElementById("sensor-type")
+    let selectedOption = e.options[e.selectedIndex].value    
+    
+    let sensorType = selectedOption.substring(0,2)
+
     // load the sensors for the selected sensor type
+    fetch(`/api/sensors?type=${sensorType}`).then((response) => {
+        return response.json()
+    }).then((json) => {
+        console.log(json)
+    })
     
 }
