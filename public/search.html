@@ -6,32 +6,20 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="search.css" />
-    <script src="main.js"></script>
+    <script src="search.js"></script>
 </head>
 <body>
     <fieldset>
-        <legend>Input</legend>
+        <legend>Sensor Search</legend>
         <form>
             <div>
-                <label for="display-name"> Name:
-                    <span class="warning">*(Allows only letters.)</span> 
+                <label for="sensor-barcode">Sensor Barcode:
+                    <span class="warning">*(Allows only 2 letters followed by 6 numbers.)</span> 
                 </label>
-                <input type="text" id="display-name" name="ip-display"
-                       pattern="[A-Za-z\s]+"
-                       maxlength="5" minlength="2" value="Aa" required />
+                <input type="text" id="sensor-barcode" name="sensor-barcode"
+                       pattern="[a-zA-Z]{2}\d{6}"
+                       maxlength="8" minlength="8" required />
                 <span></span>
-            </div>
-            <div>
-                <label for="readonly-ip">ReadOnly:</label>
-                <input type="text" id="readonly-ip" name="ip-readonly"
-                       placeholder="I'm read only." readonly />
-            </div>
-            <div>
-                <label for="disabled-ip">Disabled:</label>
-                <input type="text" name="ip-disabled"
-                       id="disabled-ip"
-                       value="I am disabled"
-                       disabled />
             </div>
             <div>
                 <input type="submit" class="submit" value="Submit" />
