@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass assets/stylesheets/main.scss -o public",
-    "watch-css": "npm run build-css && node-sass assets/stylesheets/main.scss -wo public"
+    "build-css": "cat assets/stylesheets/*.scss | node-sass > public/styles.css",
+    "watch-css": "npm run build-css && node-sass assets/stylesheets/*.scss -wo public/main.css"
   },
   "repository": {
     "type": "git",
