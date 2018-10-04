@@ -17,54 +17,6 @@ th {
     text-align: left;
 }
 
-%border-box {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-%user-select-none {
-    -webkit-user-select: none;
-       -moz-user-select: -moz-none;
-        -ms-user-select: none;
-            user-select: none;
-}
-
-%hide-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-indent: 100%;
-  word-wrap: normal;
-  overflow-wrap: normal;
-  @extend %user-select-none;
-}
-
-%truncate-text {
-  overflow: hidden;
-  white-space: nowrap;
-  word-wrap: normal;
-  overflow-wrap: normal;
-  text-overflow: ellipsis;
-}
-
-$maxWidth: 80rem;
-$headerHeight: 3rem;
-$sidebarWidth: 20rem;
-$sidebarMediumWidth: 16rem;
-
-$mediumScreen: '(max-width: 800px)';
-
-$documentBackground: #f3f3f3;
-$contentBackground: #fff;
-
-$headerBackground: #eee;
-$headerBorder: #d7d7d7;
-
-$sidebarBackground: #f9f9f9;
-$sidebarBorder: #e1e1e1;
-
-$inputFocusBorder: #35b5f4;
-
-$textColorLight: #666;
 
 ._header {
     position: absolute;
@@ -85,14 +37,6 @@ $textColorLight: #666;
 }
 
 
-%svg-icon {
-    display: inline-block;
-    vertical-align: top;
-    width: 1rem;
-    height: 1rem;
-    pointer-events: none;
-    fill: currentColor;
-  }
 
 ._app {
     position: relative;
@@ -109,7 +53,7 @@ $textColorLight: #666;
     flex: 0 0 auto;
     width: 2.25rem;
     height: 100%;
-    color: #666;
+    color: $textColorLight;
     text-align: center;
   
     &[hidden] { display: none; }
