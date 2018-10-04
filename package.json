@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "cat assets/stylesheets/*.scss | node-sass > public/styles.css",
+    "build-css": "cat assets/stylesheets/global/*.scss assets/stylesheets/components/*.scss | node-sass > public/styles.css",
     "watch-css": "npm run build-css && node-sass assets/stylesheets/*.scss -wo public/main.css"
   },
   "repository": {
