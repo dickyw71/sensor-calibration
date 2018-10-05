@@ -1,7 +1,7 @@
 
-document.addEventListener('DOMContentLoaded',function() {
-    document.querySelector('select[name="sensor-type"]').onchange=sensorTypeChangeEventHandler;
-},false);
+// document.addEventListener('DOMContentLoaded',function() {
+//     document.querySelector('select[name="sensor-type"]').onchange=sensorTypeChangeEventHandler;
+// },false);
 
 (function() {
     console.time("fetch_types")
@@ -10,12 +10,14 @@ document.addEventListener('DOMContentLoaded',function() {
         console.timeEnd("fetch_types")
         return response.json()
     }).then((json) => {
-            let selectElement = document.getElementById("sensor-type")
+            let listElement = document.getElementById("list")
             json.rows.forEach(sensorType => {
-                let newOption = document.createElement("option")
-                newOption.setAttribute("value", `${sensorType[0]}   ${sensorType[1]}`)
-                newOption.innerHTML = newOption.value
-                selectElement.appendChild(newOption)
+                let sensorDetails = document.createElement("details")
+                let sensorSummary = document.createElement("summary")
+                sensorSummary.setAttribute("value", `${sensorType[0]}   ${sensorType[1]}`)
+                sensorSummary.innerText = `${sensorType[0]}   ${sensorType[1]}`
+                sensorDetails.appendChild(sensorSummary)
+                listElement.appendChild(sensorDetails)
             })        
         })
 })();
