@@ -13,6 +13,7 @@
             let listElement = document.getElementById("list")
             json.rows.forEach(sensorType => {
                 let sensorDetails = document.createElement("details")
+                sensorDetails.className = "_list-item"
                 let sensorSummary = document.createElement("summary")
                 sensorSummary.setAttribute("value", `${sensorType[0]}   ${sensorType[1]}`)
                 sensorSummary.innerText = `${sensorType[0]}   ${sensorType[1]}`
