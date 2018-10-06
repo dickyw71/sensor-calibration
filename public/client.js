@@ -12,13 +12,21 @@
     }).then((json) => {
             let listElement = document.getElementById("list")
             json.rows.forEach(sensorType => {
-                let sensorDetails = document.createElement("details")
-                sensorDetails.className = "_list-item"
-                let sensorSummary = document.createElement("summary")
-                sensorSummary.setAttribute("value", `${sensorType[0]}   ${sensorType[1]}`)
-                sensorSummary.innerText = `${sensorType[0]}   ${sensorType[1]}`
-                sensorDetails.appendChild(sensorSummary)
-                listElement.appendChild(sensorDetails)
+                let listItem = document.createElement("a")
+                listItem.className = "_list-item _list-dir"
+                listItem.setAttribute("sensor-type", `${sensorType[0]}`)
+                listItem.setAttribute("tabindex", "-1")
+                let listArrow = document.createElement("svg")
+                listArrow.className = "_list-arrow"
+                let useEle = document.createElement("use")
+                useEle.setAttribute("xlink:href", "#icon-dir")
+                listArrow.appendChild(useEle)
+                let listText = document.createElement("span")
+                listText.className = "_list-text"
+                listText.innerText = `${sensorType[0]}   ${sensorType[1]}`
+                listItem.appendChild(listArrow)
+                listItem.appendChild(listText)
+                listElement.appendChild(listItem)
             })        
         })
 })();
