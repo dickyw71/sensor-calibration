@@ -19,7 +19,7 @@
                 let listArrow = document.createElement("svg")
                 listArrow.className = "_list-arrow"
                 let useEle = document.createElement("use")
-                useEle.setAttribute("xlink:href", "#icon-dir")
+                useEle.setAttribute("href", "#icon-dir")
                 listArrow.appendChild(useEle)
                 let listText = document.createElement("span")
                 listText.className = "_list-text"
