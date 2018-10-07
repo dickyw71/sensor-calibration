@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>Sensor Calibration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
@@ -15,9 +15,10 @@
                     <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
             </button>
             <form class="_search" role="search">
-                <svg><use xlink:href="#icon-search"/></svg>
+                <svg><use href="#icon-search"/></svg>
                 <input type="search" name="q" class="_search-input" placeholder="Search&hellip;" autocomplete="off" autocapitalize="on" autocorrect="off" spellcheck="false" maxlength="30" aria-label="Search">
-                <button type="reset" class="_search-clear" title="Clear search"><svg><use xlink:href="#icon-close"/></svg>Clear search</button>
+                <button type="reset" class="_search-clear" title="Clear search"><svg><use 
+                    href="#icon-close"/></svg>Clear search</button>
                 <div class="_search-tag"></div>
             </form>
         </header>
@@ -66,7 +67,7 @@
             <main class="_content _content-loading" role="main"></main>
         </div>
     </div>
-    <svg style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <symbol id="icon-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></symbol>
           <symbol id="icon-dir" viewBox="0 0 20 20"><path d="M15 10c0 .3-.305.515-.305.515l-8.56 5.303c-.625.41-1.135.106-1.135-.67V4.853c0-.777.51-1.078 1.135-.67l8.56 5.305S15 9.702 15 10z"/></symbol>
